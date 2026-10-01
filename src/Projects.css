@@ -1,0 +1,102 @@
+/* =========================================
+   PROJECT CARDS
+   ========================================= */
+
+.project-card {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--sand);
+  transition: 0.25s ease;
+  background-color: var(--warm-beige);
+  padding: 6px 6px 0;
+}
+
+.row > div:first-child .ratio {
+  background-color: #F0F8FF
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card img {
+  object-fit: cover;
+}
+
+.project-card .card-body {
+  flex-grow: 1;
+  /* ensures titles/description keep equal height */
+}
+
+/* Hover image zoom (optional) */
+.project-card .ratio img {
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .ratio img {
+  transform: scale(1.05);
+}
+.project-title-link {
+  color: var(--deep-charcoal);
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.project-title-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.view-code-link {
+  font-size: 0.95rem;
+  color: var(--deep-charcoal);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tap feedback (important on mobile) */
+.view-code-link:active {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Icon sizing */
+.view-code-link i {
+  font-size: 1rem;
+}
+
+/* Optional: Change cursor on image so it feels clickable */
+.project-card img {
+  cursor: pointer;
+}
+
+/* Hover zoom effect to hint interactivity */
+.project-card:hover img {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+
+.github-icon-link i {
+  font-size: 1.25rem;
+  color: var(--deep-charcoal);
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .view-code-link:hover {
+    color: var(--accent);
+  }
+  .github-icon-link:hover i {
+    color: var(--accent);
+  }
+}
+@media (min-width: 768px) {
+  .view-code-link {
+    font-size: 0.9rem;
+  }
+}

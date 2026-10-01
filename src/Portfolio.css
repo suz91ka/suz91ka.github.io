@@ -1,0 +1,234 @@
+:root {
+  /* Blue mist palette, shared by the hero, sections, and project cards. */
+  --sand: #e3edf5;
+  --warm-beige: #f9fbfd;
+  --charcoal: #202c3b;
+  --deep-charcoal: #152438;
+  --soft-grey: #dce3eb;
+  --accent: #375a7e;
+  --bs-secondary-color: #566478;
+}
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+body {
+  background-color: var(--warm-beige);
+  color: var(--charcoal);
+  font-family: 'Lora', serif;
+  font-size: 16px;
+}
+
+.bg-light {
+  background-color: var(--warm-beige) !important;
+}
+
+.bg-sand {
+  background-color: var(--sand) !important;
+}
+
+
+.text-headings {
+  color: var(--accent) !important;
+}
+
+/* =========================================
+   HEADER SECTION
+   ========================================= */
+.header {
+  background:
+    radial-gradient(ellipse at 85% 15%, #c7dcec, transparent 65%),
+    linear-gradient(120deg, var(--warm-beige), var(--sand)) !important;
+  background-size: cover;
+}
+
+/* Welcome → Your Name → Role */
+.header .roles {
+  font-family: 'Lora', serif;
+}
+.roles {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+.chevron {
+  font-size: inherit !important;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-btn {
+  padding: 0.4rem 1rem !important;
+  line-height: 1 !important;
+  height: auto !important;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+/* Accent-filled button (optional) */
+.btn-accent {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: white !important;
+}
+
+.btn-accent:hover {
+  background-color: var(--deep-charcoal) !important;
+  border-color: var(--deep-charcoal) !important;
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+.about-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.about-content {
+  min-height: 100px; /* adjust as needed */
+}
+
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-divider {
+  border-top: 0.9px solid var(--soft-grey);
+}
+
+.section-title {
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+  /* fs-6 equivalent */
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  /* fs-4 equivalent */
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+
+
+
+/* Social Icon Button Style */
+.social-icons a {
+  height: 48px;
+  width: 48px;
+  color: var(--accent) !important;
+  /* same color as headings */
+  font-size: 1.9rem;
+  /* consistent icon size */
+  transition: 0.25s ease;
+  line-height: 1;
+}
+
+.social-icons a:hover {
+  color: var(--deep-charcoal) !important;
+  /* dark hover */
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE STYLES
+   ========================================= */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+  .roles {
+    font-size: 1.25rem;
+  }
+  .about-text {
+    font-size: 1.05rem;
+  }
+  .section-tile {
+    font-size: 1.1rem;
+  }
+.header-btn {
+    padding: 0.5rem 1.2rem !important;
+    font-size: 1.15rem;
+  }
+  .about-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .section-spacing {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+  }
+  .section-title {
+    font-size: 1.25em;
+  }
+  .about-text {
+    font-size: 1.12rem;
+  }
+  .roles {
+    font-size: 1.4rem;
+  }
+.header-btn {
+    font-size: 1.25rem;
+    padding: 0.8rem 1.9rem;
+  }
+  .project-card .ratio img {
+    height: 200px;
+  }
+
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 19px;
+  }
+  .header-btn {
+    font-size: 1.35rem;
+    padding: 0.9rem 2.1rem;
+  }
+}
+
+
+
+@media (min-width: 992px) {
+  body {
+    font-size: 18px; /* laptops */
+  }
+}
+  .project-card img {
+    height: 200px;
+  }
+
+
+@media (min-width: 1200px) {
+
+  /* Large laptops/desktops */
+  body {
+    font-size: 19px; /* laptops */
+  }
+}
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
