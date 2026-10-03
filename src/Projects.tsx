@@ -1,106 +1,23 @@
-import React from "react";
+import React from 'react';
 import './Projects.css';
 
-
-type Project = {
-  title: string;
-  image: string;
-  link: string;
-  alt: string;
-  live: string;
-  repo: string;
-};
-
-const projects: Project[] = [
-  {
-    title: "Random Quote",
-    image: "./images/quote.png",
-    link: "./images/quote.png",
-    alt: "Random Quote Machine",
-    live: "https://suz91ka.github.io/random-quote-machine/",
-    repo: "https://github.com/suz91ka/random-quote-machine"
-
-  },
-  {
-    title: "Calculator",
-    image: "./images/calculator.png",
-    link: "./images/calculator.png",
-    alt: "Calculator",
-    live: "https://suz91ka.github.io/calculator/",
-    repo: "https://github.com/suz91ka/calculator"
-  },
-  {
-    title: "Jokes Website",
-    image: "./images/vtipy.png",
-    link: "./images/vtipy.png",
-    alt: "Jokes Website",
-    live: "https://suz91ka.github.io/vtipy/",
-    repo: "https://github.com/suz91ka/jokes-website"
-  },
+const projects = [
+  { title: 'Random Quote', image: './images/quote.png', description: 'A small moment of inspiration, built for the web.', live: 'https://suz91ka.github.io/random-quote-machine/', repo: 'https://github.com/suz91ka/random-quote-machine', category: 'INTERACTIVE WEB APP' },
+  { title: 'Calculator', image: './images/calculator.png', description: 'Exploring logic and interaction through an everyday tool.', live: 'https://suz91ka.github.io/calculator/', repo: 'https://github.com/suz91ka/calculator', category: 'EVERYDAY TOOLS' },
+  { title: 'Jokes Website', image: './images/vtipy.png', description: 'A playful project with a simple goal: a little laughter.', live: 'https://suz91ka.github.io/vtipy/', repo: 'https://github.com/suz91ka/jokes-website', category: 'WEB EXPERIENCE' },
 ];
 
-const Projects: React.FC = () => {
-  return (
-    <div className="row g-4 justify-content-center">
-      {projects.map((project, index) => (
-        <div key={index}
-          className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-
-
-
-          <div
-            className="text-decoration-none d-block w-100">
-            <div
-              className="project-card card shadow-sm rounded-4 h-100 mx-auto">
-
-              {/* IMAGE → LIVE DEMO */}
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="d-block ratio ratio-16x9 rounded-top-4 overflow-hidden"
-              >
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  className="w-100 h-100 object-fit-cover"
-                  style={{ objectPosition: "center" }}
-                />
-
-
-              </a>
-
-              {/* TITLE → CODE */}
-              <div className="card-body text-center">
-
-
-                <div className="d-flex flex-column flex-sm-row gap-2 justify-content-center">
-
-
-
-                  {/* VIEW CODE */}
-                  <a
-                    className="view-code-link d-flex align-items-center justify-content-center gap-1"
-                    href={project.repo}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="View source code on GitHub"
-                  >
-                    <span>View Code
-                      </span>
-                    <i className="bi bi-braces"></i>
-                  </a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      ))
-      }
-    </div >
-  );
-};
-
+const Projects: React.FC = () => (
+  <div className="project-grid">
+    {projects.map((project, index) => (
+      <article className="project-item" key={project.title}>
+        <a className={`project-preview preview-${index}`} href={project.live} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live demo`}><img src={project.image} alt={`${project.title} project screenshot`} /></a>
+        <p className="project-category">{project.category}</p>
+        <h3><a href={project.live} target="_blank" rel="noreferrer">{project.title}</a></h3>
+        <p className="project-description">{project.description}</p>
+        <div className="project-links"><a href={project.live} target="_blank" rel="noreferrer">Live demo</a><a href={project.repo} target="_blank" rel="noreferrer" aria-label={`View ${project.title} source code on GitHub`}>View code</a></div>
+      </article>
+    ))}
+  </div>
+);
 export default Projects;
