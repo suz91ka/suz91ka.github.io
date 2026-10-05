@@ -11,10 +11,10 @@ const Projects: React.FC = () => (
   <div className="project-grid">
     {projects.map((project, index) => (
       <article className="project-item" key={project.title}>
-        <a className={`project-preview preview-${index}`} href={project.live} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live demo`}><img src={project.image} alt={`${project.title} project screenshot`} /></a>
         <p className="project-category">{project.category}</p>
         <h3><a href={project.live} target="_blank" rel="noreferrer">{project.title}</a></h3>
         <p className="project-description">{project.description}</p>
+        <a className={`project-preview preview-${index}`} href={project.live} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live demo`}><img src={project.image} alt={`${project.title} project screenshot`} /></a>
         <div className="project-links"><a href={project.live} target="_blank" rel="noreferrer">Live demo</a><a href={project.repo} target="_blank" rel="noreferrer" aria-label={`View ${project.title} source code on GitHub`}>View code</a></div>
       </article>
     ))}
